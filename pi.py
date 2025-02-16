@@ -28,7 +28,8 @@ plt.axis()
 points_x, points_y = [], []
 point_plot, = ax.plot([], [], 'o', markersize=2)
 
-text = ax.text(0.02, 1.05, '', transform=ax.transAxes)
+text1 = ax.text(0.02, 1.05, '', transform=ax.transAxes)
+text2 = ax.text(0.27, 1.05, '', transform=ax.transAxes)
 
 in_pts = 1
 out_pts = 1
@@ -47,7 +48,8 @@ def update(frame):
     
 
     point_plot.set_data(points_x, points_y)
-    text.set_text(f'$\pi = {str(calc_pi(in_pts, out_pts))}$')
+    text1.set_text(f'$\pi = {str(round(calc_pi(in_pts, out_pts), 5))}$')
+    text2.set_text(f'$n = {str(in_pts + out_pts)}$')
 
     return point_plot,
 
